@@ -77,6 +77,11 @@ def _create_session_path(context_path: Path) -> Path:
 
 
 def _load_state(state_path: Path) -> Dict[str, Any]:
+    """Load state from a pickle file.
+    
+    SECURITY WARNING: pickle can execute arbitrary code during deserialization.
+    Only load state files that you created - never load state files from untrusted sources.
+    """
     if not state_path.exists():
         raise RlmReplError(f"No state found at {state_path}. Run: python rlm_repl.py init <context_path>")
     with state_path.open("rb") as f:

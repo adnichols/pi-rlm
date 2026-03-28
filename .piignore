@@ -1,0 +1,21 @@
+# pi-rlm Extension
+# Files to ignore when installed as a pi extension
+
+# Development files
+.git
+.gitignore
+node_modules
+*.log
+
+# Documentation that shouldn't be installed
+devdocs/
+sessions/
+DEVELOPMENT_HISTORY.md
+
+# Test files (optional - can be included)
+# skills/rlm/tests/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo

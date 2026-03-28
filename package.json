@@ -1,0 +1,50 @@
+{
+  "name": "pi-rlm",
+  "version": "1.0.0",
+  "description": "RLM (Recursive Language Model) extension for pi - process extremely large context files that exceed typical LLM context windows",
+  "type": "module",
+  "main": "extension/index.ts",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "rlm",
+    "recursive-language-model",
+    "large-context",
+    "chunking",
+    "subagent"
+  ],
+  "author": "Whamp",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adnichols/pi-rlm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adnichols/pi-rlm/issues"
+  },
+  "homepage": "https://github.com/adnichols/pi-rlm#readme",
+  "scripts": {
+    "test": "cd skills/rlm/tests && python3 -m pytest -v 2>/dev/null || echo 'Tests require pytest. Install with: pip install pytest'",
+    "verify": "python3 skills/rlm/scripts/rlm_repl.py --help"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-ai": "0.63.1",
+    "@mariozechner/pi-coding-agent": "0.63.1",
+    "@sinclair/typebox": "^0.34.41",
+    "@types/node": "^20.0.0"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@sinclair/typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extension/index.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  }
+}
